@@ -1,0 +1,269 @@
+@font-face {
+  font-family: "Roboto Local";
+  src: url("assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Local";
+  src: url("assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ink: #252725;
+  --muted: #646864;
+  --line: #d8dbd8;
+  --accent: #275f5d;
+  --paper: #ffffff;
+  --shell: 1020px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Roboto Local", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+
+.site-shell {
+  width: min(calc(100% - 48px), var(--shell));
+  margin: 0 auto;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 48px;
+  align-items: start;
+  padding: 64px 0 24px;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.overline {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+  line-height: 1.12;
+}
+
+.role {
+  margin: 12px 0 28px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.profile-copy > p:not(.overline):not(.role):not(.profile-links) {
+  margin: 0 0 18px;
+}
+
+.profile-details {
+  display: grid;
+  gap: 10px;
+  margin: 28px 0;
+}
+
+.profile-details div {
+  display: grid;
+  grid-template-columns: 135px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.profile-details dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.profile-details dd {
+  margin: 0;
+  font-size: 14px;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin: 10px 0 28px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.content-section {
+  padding: 18px 0;
+}
+
+.content-section > h2 {
+  margin: 0 0 14px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.publication-group,
+.experience-group {
+  margin-top: 18px;
+}
+
+.publication-group:first-of-type,
+.experience-group:first-of-type {
+  margin-top: 0;
+}
+
+.publication-group h3 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 17px;
+}
+
+.paper-list {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.paper-list li {
+  margin: 0;
+  padding: 4px 0 4px 8px;
+  border-top: 1px solid var(--line);
+}
+
+.paper-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 32px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.experience-item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-item h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.experience-item p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.experience-item .experience-meta {
+  margin: 0;
+  text-align: right;
+  font-size: 13px;
+}
+
+.personal-section p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+@media (max-width: 760px) {
+  .site-shell {
+    width: min(calc(100% - 36px), var(--shell));
+  }
+
+  .profile {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 32px 0 20px;
+  }
+
+  .profile-photo {
+    width: min(100%, 360px);
+    aspect-ratio: 4 / 5;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .profile-details div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .content-section {
+    padding: 16px 0;
+  }
+
+  .content-section > h2 {
+    margin-bottom: 12px;
+    font-size: 27px;
+  }
+
+  .paper-list {
+    padding-left: 20px;
+  }
+
+  .paper-list li {
+    padding-left: 4px;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .experience-item .experience-meta {
+    text-align: left;
+  }
+}
